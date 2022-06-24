@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>제목</title>
+    <style>
+        /* diplay요소
+           display : block;   - width,height 0 :
+           display : inline;  - width,height 속성 동작 x
+           ex)span
+           display : inline-block;
+        */
+        h2{ border:1px solid red; 
+            width: 300px; /*단위 px, %, em(부모 크기의 em배), rem, mm, cm, in*/
+            /*width:50%; */
+            height: 300px;
+        }
+        p { border:1px solid blue}
+        span { border:1px solid green;
+            width:300px;
+            height: 300px;
+            display: block;
+        }
+    </style>
+  </head>
+  <body>
+      <h2>제목</h2>
+      <input type="button" value="Click" 
+      onclick="alert(new Date().toLocaleDateString())"/>
+      <p>내용1</p>  
+      <p>내용2</p>  
+      <p>내용3</p>  
+      <span>여기는</span>
+      <span>여기는 어디인가요</span>
+  </body>
+</html>

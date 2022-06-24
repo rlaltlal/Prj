@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <!-- padding, margin = 0 -> 크기조절시 테이블 깨지지 않음-->
+    <style>
+        table,td{border: 1px solid black; border-collapse: collapse;}
+        td{padding:5px;
+            text-align: center;
+        }
+        table{margin:0 auto;}
+        td:nth-child(1) {background-color: gray;
+            width:150px;
+        }
+        td:nth-child(2){
+            text-align: left;
+            width: 400px;
+        }
+        input{width:384px;}
+        input[name=phone2] {width:100px;} 
+        /* input의 속성을통해 지정*/
+        input[name=phone3] {width:100px;} 
+        input[type=color] {width:30px;}
+        input[type=submit],input[value=취소]{width:60px;}
+        /*tr td:last-child{background-color: white;}
+         모든 tr의 td는 모두 last-child이므로 모든 td에 적용됨
+        */
+        
+        tr:last-child td{background-color: white;}
+        /* lastchild가 tr일때 td의 style
+        */
+
+        tr:last-child input,
+        /*tr:last-child input,button{width: 60px;} : tr button에 적용 안됨*/
+        tr:last-child button{width: 60px;}
+        
+        input[type="radio"],
+        input[type="checkbox"]{width:30px;}
+        
+    </style>
+</head>
+<body>
+    <form action="process.jsp" method="get">
+        <table>
+            <caption><h2>회원가입</h2></caption>
+        <tr>
+            <td>아이디</td>
+            <td> <input type="text" name="uid"/> </td></tr><br>
+        <tr>
+            <td>암호</td> 
+            <td><input type="password" name="pwd"/></td></tr><br>
+        <tr>
+            <td>이름</td> 
+            <td><input type="text" name="name" /></td></tr><br>
+        <tr>
+            <td>이메일</td> 
+            <td><input type="email" name="email"/></td></tr><br>
+            <tr>
+                <td>성별</td>
+                <td><input type="radio" name="gender" value="m" id="male"/>
+                    <label for="male">남자</label>
+                    <!-- label로 묶으면 radio button말고 텍스트를 눌러도 활성화-->
+                    <input type="radio" name="gender" value="f" id="female"/>
+                    <!-- name을 같게하면 하나의 radio button으로 묶임-->
+                    <label for="female">여자</label>
+                </td>
+            </tr><br>
+            <tr>
+                <td>프로필 이미지</td>
+                <td><input type="file" name="file1"/></td>
+            </tr>
+            <tr>
+                <td>분야</td>
+                <td>
+                    <input type="checkbox" name="cb" value="movie" id="movie">
+                    <label for="movie">영화</label>
+                    <!-- name,id = get 주소에 들어갈 변수명,값
+                    id와 label을 같게하면 id와 label이 서로 묶임-->
+                    <input type="checkbox" name="cb" value="broadcast" id="broadcast">
+                    <label for="broadcast">방송</label>
+                    <input type="checkbox" name="cb" value="publish" id="publish">
+                    <label for="publish">출판</label>
+                    <input type="checkbox" name="cb" value="art" id="art">
+                    <label for="art">공연/예술</label>
+
+                </td>
+            </tr>
+        <tr>
+            <td>전화번호</td>
+            <td><select name="phone1" size="1">
+                <!-- size >= 목록 개수 => list형태-->
+            <option value="010">010</option>
+            <option value="011">sk</option>
+            <option value="016" selected>kt</option>
+            <option value="019">lg</option>
+        </select>-
+        <input type="text" name="phone2">-
+        <input type="text" name="phone3"></td></tr><br>
+        <tr>
+            <td>자기소개</td>
+            <td>
+                <textarea name="intro" id="" cols="60" rows="10" maxlength="2000"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>가입일</td>
+            <td><input type="date" name="date" id="date"></td></tr><br>
+        <tr>
+            <td>좋아하는 색상</td>
+            <td><input type="color" name="color" id="color"></td></tr><br>
+        <!-- name속성 없으면 query string에 보내지지 않음-->
+        <tr>
+            <td colspan="2"><input type="submit" value="가입" />
+                <input type="image" src="image">
+                <button>가입</button>
+                <input type="button" value="가입" onclick="document.forms[0].submit()">
+                <input type="button" value="취소">
+
+            
+            <input type="reset" value="취소"/></td></tr>
+        
+       
+        </table>
+        <!--file:///C:/ws/html/WebPrj01/process.jsp?
+            uid= &pwd= &name= &email= &tel= &date= &color=%23000000-->
+        
+    
+        </form>
+</body>
+</html>

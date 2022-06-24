@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{border: 1px solid black;}
+        table,h2{margin:0 auto;} /*테이블을 가운데*/
+        table{text-align: center;} /*내용을 가운데*/
+        #t2 tr {color:aqua} /*t2>tr 안되는이유: t2 자손노드= tbody*/
+    </style>
+</head>
+<body>
+   
+    <table>
+        <caption> <h2>동호회 회비목록</h2></caption>
+        <!--caption: table의 제목-->
+        <thead></thead>
+        <tbody>
+        <tr>
+            <td>이름</td> 
+            <td>성별</td> 
+            <td>주소</td>
+            <td>회비</td>
+        </tr>
+        <tr>
+            <td>최진혁</td>
+            <td>남</td> 
+            <td rowspan="2">청주</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>제시카</td>
+            <td>여</td> 
+            
+            <td>5000</td>
+        </tr>        
+        <tr>
+            <td colspan="3">합계</td> 
+            
+            
+            <td>150000</td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <br>
+    <table id="t2">
+        <caption> <h2>동호회 회비목록</h2></caption>
+        <!--caption: table의 제목-->
+        <thead></thead>
+        <tbody>
+        <tr>
+            <td>이름</td> 
+            <td>성별</td> 
+            <td>주소</td>
+            <td>회비</td>
+        </tr>
+        <tr>
+            <td>최진혁</td>
+            <td>남</td> 
+            <td rowspan="2">청주</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>제시카</td>
+            <td>여</td> 
+            
+            <td>5000</td>
+        </tr>        
+        <tr>
+            <td colspan="3">합계</td> 
+            
+            
+            <td>150000</td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</body>
+</html>

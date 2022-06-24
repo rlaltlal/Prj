@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li  {border:1px solid blue;}
+        ol.c1 { list-style-type:decimal-leading-zero;}
+        /*ol element중에서 class="c1" */
+        
+        ol.c2 { list-style-type:/* korean-hangul-formal; 일이삼*/
+        /*hangul-consonant; ㄱㄴㄷ*/hiragana;}
+        
+        ol .c2{color:brown;}
+        /*ol(공백).c2: ol element의 자손노드(descendant, 자식,손자)중에 class="c2"*/
+
+        ul > li {text-decoration: underline;}
+        /*ul>li : ul의 자식노드중에 li*/
+
+        ul{
+            list-style-type: none;
+            padding:0; margin:0;
+            /*리스트 앞 공백 지우기*/
+        }
+        
+        li:first-child {color:red;}
+        /*첫번째자식이 li면 color:red*/
+       
+        body>ol>li:last-child>{color:cyan;}
+        
+
+        li:nth-of-type(3) {color:orange;}
+        /*li중에 3번째 type*/
+
+
+    </style>
+</head>
+<body>
+    <h2>리스트</h2>
+    <div>순서 없는 리스트(unordered list, disc, circle, square, none)</div>
+    <ul class="c1">
+        <li>트위터</li>
+        <li>링크드인</li>
+        <li>페이스북</li>
+        <li>카카오</li>            
+    </ul>
+    <div>순서 있는 리스트 (1,a,A,I,i)</div>
+    <ol type="I">
+        <li>트위터</li>
+        <li>링크드인</li>
+        <li>페이스북</li>
+        <li>카카오
+            <ol type="A">
+             <li>카카오톡</li>
+              <li>카카오T</li>
+              <li>카카오Map</li>
+             </ol>
+        </li>
+    </ol>
+    <div>순서 있는 리스트 (1,a,A,I,i)</div>
+    <ol class="c1">
+        <li>트위터</li>
+        <li>링크드인</li>
+        <li>페이스북</li>
+        <li>카카오
+         <ol class="c2">
+            <li>카카오톡</li>
+            <li>카카오T</li>
+            <li>카카오Map</li>
+         </ol>
+        </li>
+    </ol>
+</body>
+</html>

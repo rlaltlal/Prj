@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style10.css">
+    <style>
+        #table1 td:first-child,
+        #table2 td:first-child,
+        #table2 td:nth-child(3){width:150px; padding-left: 10px; background-color: #e2e2e2;}
+        #table1 caption{color:chocolate;}
+        #table2 caption{text-align: left;}
+        #table2 td:first-child,
+        #table2 td:nth-child(3){width:100px;}
+        td:nth-child(2){padding:5px 0px 5px 20px;}
+        input[type="text"]{width: 100px;}
+        select[name="mail_next_auto"]{width:100px;}
+        caption{color:red; text-align: right;}
+        #table3 td{width:100px;text-align: left; padding:10px; 
+            border:0px solid black;}
+        table{border-right-width: 0px; border-left-width: 0px;}
+        #table1 td:first-child{border-left: 0px;}
+        #table1 td:last-child{border-right: 0px;}
+        #table2 td:first-child{border-left: 0px;}
+        #table2 td:last-child{border-right: 0px;}
+        div#btns{text-align: center; height: 60px; line-height: 60px;}
+        /* css style 우선순위 
+        1.속성 값 뒤에 !important 를 붙인 속성
+        2.HTML에서 style을 직접 지정한 속성
+        3.#id 로 지정한 속성
+        4. .클래스, :추상클래스 로 지정한 속성
+        5.태그이름 으로 지정한 속성
+        6.상위 객체에 의해 상속된 속성 */
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+    <table id="table1">
+        <caption>※ 모든 정보는 필수입력입니다</caption>
+        <tr>
+            <td>
+                <b>이메일(아이디)</b> 
+            </td>
+            <td>
+                <input type="text" name="mail_prev" id="mail_prev"> @
+                <input type="text" name="mail_next" id="mail_next">&nbsp;
+                <select name="mail_next_auto" id="">
+                    <option value="" selected>::직접입력</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="daum.net">daum.net</option>
+                </select>
+                <button>중복확인</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>비밀번호</b>
+            </td>
+            <td>
+                <input type="password" name="pwd" id="pwd">
+                <span class="red"> ※ 8~12자리의 영문과 숫자, 특수문자</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>비밀번호 확인</b>
+            </td>
+            <td>
+                <input type="password" name="pwd_conf" id="pwd_conf">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>소식지 수신여부</b>
+            </td>
+            <td>
+                <input type="radio" name="mail_acc" value="1" id="ok" checked>
+                <label for="ok">수신</label>
+                <input type="radio" name="mail_acc" value="0" id="no_mail">
+                <label for="no_mail">미수신</label>
+            </td>
+        </tr>
+    </table>
+    <div style="height:20px;"> </div>
+    <!-- 내부style태그, 외부style.css, inline style -->
+    <table id="table2">
+        <caption>※부가입력사항</caption>
+        <tr>
+            <td>
+                <b>관심연령</b>
+            </td>
+            <td>
+                <select name="inter_age" id="inter_age">
+                    <option value="" selected>상관없음</option>
+                    <option value="10대">10대</option>
+                    <option value="20대">20대</option>
+                    <option value="30대">30대</option>
+                    <option value="40대">40대</option>
+                </select>
+            </td>
+            <td>
+                <b>성별</b>
+            </td>
+            <td>
+                <input type="radio" name="gender" id="no_gender" value="n">
+                <label for="no_gender">선택안함</label>
+                <input type="radio" name="gender" id="male" value="m">
+                <label for="male">남자</label>
+                <input type="radio" name="gender" id="female" value="f">
+                <label for="female">여자</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>결혼여부</b>
+            </td>
+            <td>
+                <input type="radio" name="married" id="no_married" value="no_married">
+                <label for="no_married">선택안함</label>
+                <input type="radio" name="married" id="notmarried" value="notmarried">
+                <label for="notmarried">미혼</label>
+                <input type="radio" name="married" id="getmarried" value="getmarried">
+                <label for="getmarried">기혼</label>
+            </td>
+            <td>
+                <b>자녀여부</b>
+            </td>
+            <td>
+                <input type="radio" name="child" id="child" value="child">
+                <label for="child">선택안함</label>
+                <input type="radio" name="child" id="yes_child" value="yes_child">
+                <label for="yes_child">없음</label>
+                <input type="radio" name="child" id="no_child" value="no_child">
+                <label for="no_child">있음</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>직업</b>
+            </td>
+            <td colspan="3">
+                <select name="job" id="job">
+                    <option value="" selected>상관없음</option>
+                    <option value="학생">학생</option>
+                    <option value="군인">군인</option>
+                    <option value="교사">교사</option>
+                    <option value="회사원">회사원</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <table id="table3">
+        <caption>관심있는 주제를 체크해주세요. 최대(6개)</caption>
+        <tr>
+            <td>
+                <input type="checkbox" name="law" id="law">
+                <label for="law">가정법률</label>
+            </td>
+            <td>
+                <input type="checkbox" name="edu" id="edu">
+                <label for="edu">아동청소년/교육</label>    
+            </td>
+            <td>
+                <input type="checkbox" name="realestate" id="realestate">
+                <label for="realestate">부동산/임대차</label>
+            </td>
+            <td>
+                <input type="checkbox" name="economic" id="economic">
+                <label for="economic">금융/금전</label>
+            </td>
+            <td>
+                <input type="checkbox" name="business" id="business">
+                <label for="business">사업</label>
+            </td>
+            <td>
+                <input type="checkbox" name="business2" id="business2">
+                <label for="business2">창업</label>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="trade" id="trade">
+                <label for="trade">무역/출입국</label>
+                <input type="checkbox" name="consumer" id="consumer">
+                <label for="consumer">소비자</label>
+                <input type="checkbox" name="culture" id="culture">
+                <label for="culture">문화/여가생활</label>
+                <input type="checkbox" name="trial" id="trial">
+                <label for="trial">재판</label>
+                <input type="checkbox" name="business" id="business">
+                <label for="business">사업</label>
+                <input type="checkbox" name="business2" id="business2">
+                <label for="business2">창업</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="law" id="law">
+                <label for="law">가정법률</label>
+                <input type="checkbox" name="edu" id="edu">
+                <label for="edu">아동청소년/교육</label>
+                <input type="checkbox" name="realestate" id="realestate">
+                <label for="realestate">부동산/임대차</label>
+                <input type="checkbox" name="economic" id="economic">
+                <label for="economic">금융/금전</label>
+                <input type="checkbox" name="business" id="business">
+                <label for="business">사업</label>
+                <input type="checkbox" name="business2" id="business2">
+                <label for="business2">창업</label>
+            </td>
+        </tr>
+    </table>
+    <div id="btns">
+        <input type="submit" value="전송"/>
+        <input type="reset" value="취소"/>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+div, span {
+    border: 1px solid green;
+}
+
+div {
+    width:900px;
+}
+span { 
+    width:400px;
+    /*display 속성이 inline이어서 동작 안함*/ 
+}
+
+.box {
+    display:block;
+}
+
+.line{
+    display:inline;
+}
+.blue{
+    color:blue;
+}
+
+#yellow{color:yellow;}
+
+/*style
+ selector : 선택자
+  div,span : tage 선택자
+  .blue : class="blue" -여러번 지정 가능
+  #yellow : id="yellow" -한 document에서 한번만 사용 가능*/
+
